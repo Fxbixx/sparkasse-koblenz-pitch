@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sparkasse Koblenz – Kreditlösungen einfach erklärt</title>
-  <meta name="description" content="Demo für eine sichtbarkeitsstarke Kredit-Landingpage der Sparkasse Koblenz mit klarer Nutzerführung, regionalem Vertrauen und digitalen Abschlusswegen." />
+  <title>Kreditfinder Koblenz – Demo mit Sparkasse Koblenz Fokus</title>
+  <meta name="description" content="Interaktive Demo für eine Kreditfinder-Webseite mit Sparkasse Koblenz als hervorgehobener regionaler Option und alternativen Vergleichsangeboten." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,198 +16,111 @@
       <div class="brand">
         <div class="brand-mark">S</div>
         <div>
-          <strong>Sparkasse Koblenz</strong>
-          <p>Demo: Kredit-Sichtbarkeit & Conversion</p>
+          <strong>Kreditfinder Koblenz</strong>
+          <p>Demo: Sparkasse Koblenz als starke regionale Option</p>
         </div>
       </div>
       <nav>
-        <a href="#kredite">Kredite</a>
-        <a href="#vorteile">Vorteile</a>
-        <a href="#seo">SEO-Struktur</a>
-        <a href="#kontakt">Beratung</a>
+        <a href="#finder">Kreditfinder</a>
+        <a href="#results">Angebote</a>
+        <a href="#why">Warum Sparkasse?</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="container hero-grid single">
         <div>
-          <span class="eyebrow">Mehr Sichtbarkeit statt nur besserer Zinsen</span>
-          <h1>Kreditlösungen, die man sofort versteht — und direkt anfragen kann</h1>
-          <p class="lead">Diese Demo zeigt, wie eine Sparkassen-Seite aufgebaut sein kann, damit Nutzer nicht erst zu Vergleichsportalen abwandern: klarer Einstieg, starke regionale Vertrauenssignale, relevante Kreditseiten und ein schneller digitaler Pre-Check.</p>
+          <span class="eyebrow">Interaktive Pitch-Demo</span>
+          <h1>Finden Sie den passenden Kredit — mit einer regional starken Empfehlung ganz oben</h1>
+          <p class="lead">Diese Demo zeigt, wie eine Such-/Vergleichsseite aufgebaut sein kann, auf der die Sparkasse Koblenz durch Vertrauen, Klarheit und Nutzerführung sichtbar heraussticht — auch wenn sie nicht immer den billigsten Zinssatz hat.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#precheck">Jetzt Pre-Check starten</a>
-            <a class="btn btn-secondary" href="#seo">Seitenstruktur ansehen</a>
+            <a class="btn btn-primary" href="#finder">Jetzt Kredit finden</a>
+            <a class="btn btn-secondary" href="#results">Beispielangebote ansehen</a>
           </div>
-          <ul class="trust-list">
-            <li>Regional & persönlich</li>
-            <li>Digitaler Einstieg in 60 Sekunden</li>
-            <li>Klare Kreditarten statt unübersichtlicher Sammelseite</li>
-          </ul>
         </div>
-        <aside class="hero-card" id="precheck">
-          <h2>Welcher Kredit passt zu Ihnen?</h2>
-          <p>Beispiel für einen einfachen Vorqualifizierungs-Einstieg.</p>
-          <form>
-            <label>Kreditwunsch
-              <select>
-                <option>Privatkredit / Ratenkredit</option>
-                <option>Schnellkredit</option>
-                <option>Baufinanzierung</option>
-                <option>Modernisierungskredit</option>
-                <option>Autokredit</option>
+      </div>
+    </section>
+
+    <section class="section" id="finder">
+      <div class="container finder-layout">
+        <aside class="filter-panel">
+          <span class="eyebrow">Kreditfinder</span>
+          <h2>Welchen Kredit brauchen Sie?</h2>
+          <div class="form-grid">
+            <label>Kreditart
+              <select id="loanType">
+                <option value="all">Alle</option>
+                <option value="privatkredit">Privatkredit / Ratenkredit</option>
+                <option value="schnellkredit">Schnellkredit</option>
+                <option value="baufinanzierung">Baufinanzierung</option>
+                <option value="modernisierung">Modernisierung</option>
+                <option value="autokredit">Autokredit</option>
               </select>
             </label>
             <label>Betrag
-              <input type="text" placeholder="z. B. 15.000 €" />
+              <input id="amount" type="range" min="1000" max="500000" step="1000" value="15000" />
+              <div class="range-value"><span id="amountLabel">15.000 €</span></div>
             </label>
-            <label>Verwendungszweck
-              <input type="text" placeholder="z. B. Auto, Renovierung, freie Verwendung" />
+            <label>Priorität
+              <select id="priority">
+                <option value="balanced">Ausgewogen</option>
+                <option value="rate">Möglichst niedrige Rate</option>
+                <option value="speed">Schnelle Entscheidung</option>
+                <option value="trust">Vertrauen & Regionalität</option>
+              </select>
             </label>
-            <button type="button" class="btn btn-primary btn-full">Pre-Check starten</button>
-            <small>Demo-Hinweis: Ziel ist nicht sofort der Abschluss, sondern ein reibungsloser Einstieg in Anfrage, Beratung oder digitale Vorprüfung.</small>
-          </form>
+          </div>
+          <div class="note-box">
+            <strong>Pitch-Idee:</strong>
+            <p>Die Sparkasse Koblenz wird nicht nur über den Zins verkauft, sondern über eine bessere Gesamtentscheidung: regional, nachvollziehbar, sicher und mit guter digitaler Führung.</p>
+          </div>
         </aside>
+
+        <section class="results-panel" id="results">
+          <div class="results-head">
+            <div>
+              <span class="eyebrow">Ergebnisse</span>
+              <h2>Passende Kreditoptionen</h2>
+            </div>
+            <p id="resultSummary">Sortierung nach ausgewogener Empfehlung.</p>
+          </div>
+          <div id="resultsList" class="result-list"></div>
+        </section>
       </div>
     </section>
 
-    <section class="section" id="kredite">
+    <section class="section section-alt" id="why">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Priorisierte Kreditseiten</span>
-          <h2>So sollte die Website nach Suchintention aufgebaut sein</h2>
-          <p>Nicht eine allgemeine Kreditseite, sondern mehrere klare Einstiege mit eigener Suchlogik, eigenem Nutzenversprechen und eigener Conversion.</p>
-        </div>
-        <div class="cards">
-          <article class="card featured">
-            <span class="badge">Priorität 1</span>
-            <h3>Privatkredit / Ratenkredit</h3>
-            <p>Hohe Suchnachfrage, gut vergleichbar, schnell testbar. Idealer Startpunkt für Sichtbarkeit und Conversion.</p>
-            <ul>
-              <li>Keyword-Fokus: privatkredit koblenz, ratenkredit koblenz</li>
-              <li>Monatsratenbeispiele & FAQ</li>
-              <li>Starker CTA zur Anfrage</li>
-            </ul>
-          </article>
-          <article class="card">
-            <span class="badge soft">Priorität 2</span>
-            <h3>Schnellkredit</h3>
-            <p>Perfekt für Nutzer mit hoher Abschlussabsicht. Hier gewinnt vor allem Geschwindigkeit und Klarheit.</p>
-            <ul>
-              <li>Keyword-Fokus: schnellkredit koblenz, sofortkredit</li>
-              <li>Digitale Schritte sichtbar machen</li>
-              <li>Zeit bis Entscheidung kommunizieren</li>
-            </ul>
-          </article>
-          <article class="card">
-            <span class="badge soft">Priorität 3</span>
-            <h3>Baufinanzierung</h3>
-            <p>Beratungsintensiver, aber sehr wertvoll. Kombination aus regionalem Vertrauen und digitalem Voranfrageprozess.</p>
-            <ul>
-              <li>Keyword-Fokus: baufinanzierung koblenz</li>
-              <li>Beispielrechner & Zinsbindung erklären</li>
-              <li>Beratung + digitale Voranfrage kombinieren</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="vorteile">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Warum Nutzer bleiben sollten</span>
-          <h2>Nicht der billigste Zins — aber die bessere Gesamterfahrung</h2>
+          <span class="eyebrow">Warum die Sparkasse oben stehen kann</span>
+          <h2>Die Empfehlung basiert nicht nur auf dem Nominalzins</h2>
+          <p>Wenn Nutzer nur nach dem günstigsten Zins filtern, gewinnt fast immer jemand anderes. Wenn die Plattform aber echte Entscheidungskriterien abbildet, kann die Sparkasse strategisch vorne stehen.</p>
         </div>
         <div class="benefits-grid">
-          <div class="benefit">
-            <h3>Verständlichkeit</h3>
-            <p>Klare Kreditarten, klare Voraussetzungen, klare nächste Schritte. Keine Verwirrung, kein Suchchaos.</p>
-          </div>
-          <div class="benefit">
-            <h3>Vertrauen</h3>
-            <p>Regionale Ansprechpartner, bekannte Marke, sichere Prozesse — aber digital leichter zugänglich gemacht.</p>
-          </div>
-          <div class="benefit">
-            <h3>Geschwindigkeit</h3>
-            <p>Pre-Check, Anfrage und Nachfasslogik verkürzen die Reibung vor dem eigentlichen Gespräch.</p>
-          </div>
-          <div class="benefit">
-            <h3>Ranking-Chancen</h3>
-            <p>Separate Seiten nach Kreditart + FAQ + lokale Signale + Ratgeber-Content schaffen echte SEO-Hebel.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="seo">
-      <div class="container two-col">
-        <div>
-          <span class="eyebrow">SEO- / Ranking-Logik</span>
-          <h2>Was oben ranken soll</h2>
-          <div class="seo-list">
-            <div>
-              <h3>1. Money Pages</h3>
-              <p>Privatkredit, Schnellkredit, Baufinanzierung, Modernisierung, Autokredit.</p>
-            </div>
-            <div>
-              <h3>2. Local SEO</h3>
-              <p>Keywords aus Produkt + Ort: „Privatkredit Koblenz“, „Baufinanzierung Koblenz“.</p>
-            </div>
-            <div>
-              <h3>3. Ratgeber-Cluster</h3>
-              <p>Fragen mit Suchintention: „Wie viel Kredit kann ich mir leisten?“ oder „Welche Unterlagen brauche ich?“</p>
-            </div>
-            <div>
-              <h3>4. Conversion-Elemente</h3>
-              <p>Jede Zielseite braucht CTA, FAQ, Rate-Beispiele, Vertrauenselemente und mobilen Fokus.</p>
-            </div>
-          </div>
-        </div>
-        <div class="structure-box">
-          <h3>Empfohlene Struktur</h3>
-          <ul>
-            <li>/kredite/</li>
-            <li>/kredite/privatkredit/</li>
-            <li>/kredite/schnellkredit/</li>
-            <li>/kredite/baufinanzierung/</li>
-            <li>/kredite/modernisierung/</li>
-            <li>/kredite/autokredit/</li>
-            <li>/ratgeber/kredit/</li>
-            <li>/standorte/koblenz/finanzierung/</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Pilotprojekt</span>
-          <h2>So könnte man damit starten</h2>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item"><strong>Woche 1</strong><p>Bestehende Kreditseiten, Rankings und Konkurrenzscreening analysieren.</p></div>
-          <div class="timeline-item"><strong>Woche 2</strong><p>Privatkredit- und Schnellkredit-Seite neu strukturieren.</p></div>
-          <div class="timeline-item"><strong>Woche 3</strong><p>Pre-Check / Anfragefluss und Nachfasslogik definieren.</p></div>
-          <div class="timeline-item"><strong>Woche 4</strong><p>SEO-Content, FAQ und Conversion-Elemente live testen.</p></div>
+          <div class="benefit"><h3>Vertrauensvorsprung</h3><p>Bekannte Marke, regionale Nähe, persönliche Ansprechpartner und mehr Sicherheit im Entscheidungsprozess.</p></div>
+          <div class="benefit"><h3>Digitale Klarheit</h3><p>Pre-Check, einfache Formulare und klare nächste Schritte senken Reibung deutlich.</p></div>
+          <div class="benefit"><h3>Erklärte Entscheidung</h3><p>Nutzer sehen nicht nur Zahlen, sondern auch Gründe: Schnelligkeit, Flexibilität, persönliche Betreuung.</p></div>
+          <div class="benefit"><h3>SEO + Conversion</h3><p>Die Seite kann auf viele Suchanfragen ranken und den Nutzer direkt in Anfrage oder Beratung führen.</p></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer" id="kontakt">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <strong>Demo-Ziel</strong>
-        <p>Eine Sparkassen-Webseite, die Nutzer nicht nur informiert, sondern sauber in Anfrage, Beratung und Abschluss führt.</p>
+        <strong>Demo-Hinweis</strong>
+        <p>Diese Seite ist ein klickbarer Prototyp für Pitch, UX und Positionierung — keine Live-Bankberatung und kein echter Kreditvergleich.</p>
       </div>
       <div>
-        <strong>Showcase-Inhalte</strong>
-        <p>Diese Seite ist als Pitch-/Konzept-Demo gedacht, damit Struktur, SEO-Logik und Nutzerführung direkt sichtbar werden.</p>
+        <strong>Ziel</strong>
+        <p>Zeigen, wie eine Sparkassen-nahe Kreditplattform Interessenten früher abholt und die Sparkasse strategisch sichtbar nach oben bringt.</p>
       </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

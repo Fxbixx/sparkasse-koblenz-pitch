@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sparkasse Koblenz – Kreditfinder & KI-Beratung Demo</title>
-  <meta name="description" content="Demo-Konzept für die Sparkasse Koblenz: SEO-starker Kreditfinder mit KI-Beratung, klarer Nutzerführung und Lead-Fokus für mehr qualifizierte Kreditanfragen." />
+  <meta name="description" content="Demo-Konzept für die Sparkasse Koblenz: SEO-starker Kreditfinder mit Hybrid-KI-Beratung, klarer Nutzerführung und Lead-Fokus für mehr qualifizierte Kreditanfragen." />
   <meta name="keywords" content="privatkredit koblenz, schnellkredit koblenz, baufinanzierung koblenz, sparkasse koblenz kredit, kredit vergleich koblenz" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
         <div class="brand-mark">S</div>
         <div>
           <strong>Sparkasse Koblenz</strong>
-          <p>Demo: Kreditfinder, SEO & KI-Beratung</p>
+          <p>Demo: Kreditfinder, SEO & Hybrid-KI-Beratung</p>
         </div>
       </div>
       <nav>
@@ -36,7 +36,7 @@
         <div>
           <span class="eyebrow">Demo für skalierbares Kreditwachstum</span>
           <h1>Mehr Sichtbarkeit. Mehr passende Kredite. Mehr qualifizierte Anfragen.</h1>
-          <p class="lead">Diese Demo zeigt, wie die Sparkasse Koblenz über eine SEO-starke Website, einen klaren Kreditfinder und eine integrierte KI-Beratung mehr Nutzer früh abholen und in echte Beratung oder Anfrage überführen kann.</p>
+          <p class="lead">Diese Demo zeigt, wie die Sparkasse Koblenz über eine SEO-starke Website, einen klaren Kreditfinder und eine hybride KI-Beratung mehr Nutzer früh abholen und in echte Beratung oder Anfrage überführen kann.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#finder">Kreditfinder starten</a>
             <a class="btn btn-secondary" href="#beratung">KI-Beratung testen</a>
@@ -44,7 +44,7 @@
           <ul class="hero-points">
             <li>Suchmaschinenfokus auf lokale Kredit-Keywords</li>
             <li>klare Seiten je Kreditart statt Sammelseite</li>
-            <li>digitale Vorqualifizierung + regionale Vertrauenssignale</li>
+            <li>strukturierte Vorqualifizierung + freier KI-Chat</li>
           </ul>
         </div>
         <aside class="hero-card" id="seo">
@@ -58,7 +58,7 @@
             <span>modernisierungskredit koblenz</span>
             <span>sparkasse koblenz kredit</span>
           </div>
-          <p>Die Demo ist bewusst so aufgebaut, dass sie Suchintention, Vergleich, Beratung und Conversion miteinander verbindet.</p>
+          <p>Die Demo verbindet Suchintention, Vergleich, KI-Beratung und Conversion in einem durchgehenden Flow.</p>
         </aside>
       </div>
     </section>
@@ -74,8 +74,8 @@
           <p>Nutzer werden geführt statt allein gelassen: Kreditart, Bedarf, Höhe und Priorität werden sauber eingeordnet.</p>
         </article>
         <article class="card">
-          <h3>3. KI-Beratung</h3>
-          <p>Ein Chat hilft bei Fragen, erklärt Unterschiede und führt Nutzer schneller zur passenden Anfrage.</p>
+          <h3>3. Hybrid-KI</h3>
+          <p>Erst strukturierte Fragen, dann freier Chat. So wird aus Orientierung eine echte Vorberatung.</p>
         </article>
       </div>
     </section>
@@ -116,24 +116,27 @@
     </section>
 
     <section class="section section-alt" id="beratung">
-      <div class="container two-col">
-        <div>
-          <span class="eyebrow">KI-Beratung</span>
-          <h2>Fragen stellen, Kredit verstehen, sicherer entscheiden</h2>
-          <p class="lead small">Die KI ist hier als Demo integriert. In einer echten Version könnte sie Sparkassen-Produkte erklären, Unterlagen vorbereiten, Unterschiede zwischen Kreditarten verständlich machen und Leads vorqualifizieren.</p>
-          <div class="chat-suggestions">
-            <button class="suggestion" data-q="Welcher Kredit passt für eine Renovierung?">Renovierung finanzieren</button>
-            <button class="suggestion" data-q="Was ist der Unterschied zwischen Privatkredit und Schnellkredit?">Privatkredit vs. Schnellkredit</button>
-            <button class="suggestion" data-q="Welche Unterlagen brauche ich für eine Baufinanzierung?">Unterlagen Baufinanzierung</button>
-          </div>
+      <div class="container two-col advisory-layout">
+        <div class="panel">
+          <span class="eyebrow">Schritt 1 – Geführter Assistent</span>
+          <h2>In 60 Sekunden zur ersten Einschätzung</h2>
+          <div id="wizardStep" class="wizard-step"></div>
+          <div id="wizardOptions" class="wizard-options"></div>
+          <div id="wizardResult" class="wizard-result"></div>
         </div>
         <div class="chatbox panel">
+          <span class="eyebrow">Schritt 2 – Freier KI-Chat</span>
           <div class="chat-log" id="chatLog">
-            <div class="msg bot">Hallo 👋 Ich bin die Demo-KI-Beratung der Sparkasse Koblenz. Ich helfe dir, den passenden Kredit einzuordnen.</div>
+            <div class="msg bot">Hallo 👋 Ich bin die Demo-KI-Beratung der Sparkasse Koblenz. Erst hilft dir der Assistent bei der Einordnung, danach kannst du frei weiterfragen.</div>
           </div>
           <div class="chat-input-row">
             <input id="chatInput" type="text" placeholder="Stelle eine Frage zur Finanzierung…" />
             <button id="sendBtn" class="btn btn-primary">Senden</button>
+          </div>
+          <div class="chat-suggestions">
+            <button class="suggestion" data-q="Was ist der Unterschied zwischen Privatkredit und Schnellkredit?">Privatkredit vs. Schnellkredit</button>
+            <button class="suggestion" data-q="Welche Unterlagen brauche ich für eine Baufinanzierung?">Unterlagen Baufinanzierung</button>
+            <button class="suggestion" data-q="Wie läuft die Anfrage bei der Sparkasse Koblenz ab?">Ablauf Anfrage</button>
           </div>
         </div>
       </div>

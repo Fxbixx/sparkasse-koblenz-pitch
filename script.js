@@ -1,187 +1,123 @@
-const offers = [
-  {
-    bank: 'Sparkasse Koblenz',
-    type: 'privatkredit',
-    title: 'Privatkredit mit regionaler Beratung',
-    rateFrom: 6.9,
-    speed: 8,
-    trust: 10,
-    regional: true,
-    badge: 'Empfohlen',
-    reasons: ['Regional & persönlich', 'Starke Vertrauenssignale', 'Guter Mix aus digital + Beratung'],
-    cta: 'Zur Sparkasse-Anfrage'
+const offers = {
+  privatkredit: {
+    title: 'Privatkredit der Sparkasse Koblenz',
+    rate: 'ab 6,9 %',
+    reason: 'stark für freie Verwendung, planbare Monatsraten und vertrauensvolle regionale Beratung',
+    speed: '8/10',
+    trust: '10/10',
+    payment: amount => `ca. ${formatEuro(Math.round(amount / 48 + amount * 0.069 / 12))}/Monat`
   },
-  {
-    bank: 'DirektBank 24',
-    type: 'privatkredit',
-    title: 'Online-Ratenkredit',
-    rateFrom: 5.8,
-    speed: 9,
-    trust: 6,
-    regional: false,
-    badge: 'Günstiger Zins',
-    reasons: ['Schnelle Online-Strecke', 'Günstiger Zinssatz', 'Wenig persönliche Begleitung'],
-    cta: 'Mehr erfahren'
+  schnellkredit: {
+    title: 'Schnellkredit der Sparkasse Koblenz',
+    rate: 'ab 7,2 %',
+    reason: 'stark wenn Tempo, Klarheit und ein sicherer digitaler Einstieg wichtig sind',
+    speed: '9/10',
+    trust: '10/10',
+    payment: amount => `ca. ${formatEuro(Math.round(amount / 42 + amount * 0.072 / 12))}/Monat`
   },
-  {
-    bank: 'Sparkasse Koblenz',
-    type: 'schnellkredit',
-    title: 'Schnellkredit mit sicherem Ablauf',
-    rateFrom: 7.2,
-    speed: 9,
-    trust: 10,
-    regional: true,
-    badge: 'Top für Vertrauen',
-    reasons: ['Schneller Einstieg', 'Seriös & regional', 'Ideal für Nutzer mit Beratungsbedarf'],
-    cta: 'Schnellkredit ansehen'
+  baufinanzierung: {
+    title: 'Baufinanzierung der Sparkasse Koblenz',
+    rate: 'ab 3,7 %',
+    reason: 'ideal für größere Entscheidungen mit Beratungsbedarf, regionaler Expertise und persönlichem Ansprechpartner',
+    speed: '7/10',
+    trust: '10/10',
+    payment: amount => `ab ${formatEuro(Math.round(amount * 0.0031))}/Monat*`
   },
-  {
-    bank: 'FastCredit Online',
-    type: 'schnellkredit',
-    title: 'Sofortkredit online',
-    rateFrom: 6.1,
-    speed: 10,
-    trust: 5,
-    regional: false,
-    badge: 'Sehr schnell',
-    reasons: ['Starke Geschwindigkeit', 'Digital fokussiert', 'Weniger Vertrauensanker'],
-    cta: 'Zum Angebot'
-  },
-  {
-    bank: 'Sparkasse Koblenz',
-    type: 'baufinanzierung',
-    title: 'Baufinanzierung mit regionalem Ansprechpartner',
-    rateFrom: 3.7,
-    speed: 7,
-    trust: 10,
-    regional: true,
-    badge: 'Regional stark',
-    reasons: ['Komplexe Fälle gut erklärbar', 'Vertrauen bei hoher Summe', 'Persönliche Begleitung wichtig'],
-    cta: 'Baufinanzierung starten'
-  },
-  {
-    bank: 'Baufi Direkt',
-    type: 'baufinanzierung',
-    title: 'Digitale Baufinanzierung',
-    rateFrom: 3.4,
-    speed: 8,
-    trust: 6,
-    regional: false,
-    badge: 'Zinsfokus',
-    reasons: ['Leicht besserer Zins', 'Digitale Strecke', 'Weniger lokale Bindung'],
-    cta: 'Mehr erfahren'
-  },
-  {
-    bank: 'Sparkasse Koblenz',
-    type: 'modernisierung',
-    title: 'Modernisierungskredit vor Ort erklärt',
-    rateFrom: 6.4,
-    speed: 8,
-    trust: 10,
-    regional: true,
-    badge: 'Empfohlen',
-    reasons: ['Förder-/Sanierungsgespräche einfacher', 'Regionaler Kontext', 'Guter Hybrid aus digital und menschlich'],
-    cta: 'Modernisierung planen'
-  },
-  {
-    bank: 'AutoLoan Direkt',
-    type: 'autokredit',
-    title: 'Autokredit online',
-    rateFrom: 5.5,
-    speed: 9,
-    trust: 6,
-    regional: false,
-    badge: 'Beliebt',
-    reasons: ['Niedrige Rate', 'Sehr digital', 'Kaum regionale Bindung'],
-    cta: 'Zum Autokredit'
-  },
-  {
-    bank: 'Sparkasse Koblenz',
-    type: 'autokredit',
-    title: 'Autokredit mit Beratung und klaren Schritten',
-    rateFrom: 6.1,
-    speed: 8,
-    trust: 10,
-    regional: true,
-    badge: 'Sicher & klar',
-    reasons: ['Vertrauensvorsprung', 'Saubere Begleitung', 'Gut für sicherheitsorientierte Nutzer'],
-    cta: 'Autokredit ansehen'
+  modernisierung: {
+    title: 'Modernisierungskredit der Sparkasse Koblenz',
+    rate: 'ab 6,4 %',
+    reason: 'passt gut bei Renovierung, Sanierung oder energetischen Maßnahmen mit Förder- und Beratungsbedarf',
+    speed: '8/10',
+    trust: '10/10',
+    payment: amount => `ca. ${formatEuro(Math.round(amount / 54 + amount * 0.064 / 12))}/Monat`
   }
-];
+};
 
 const loanType = document.getElementById('loanType');
 const amount = document.getElementById('amount');
 const amountLabel = document.getElementById('amountLabel');
 const priority = document.getElementById('priority');
-const resultsList = document.getElementById('resultsList');
-const resultSummary = document.getElementById('resultSummary');
+const recommendation = document.getElementById('recommendation');
+const chatLog = document.getElementById('chatLog');
+const chatInput = document.getElementById('chatInput');
+const sendBtn = document.getElementById('sendBtn');
+const leadForm = document.getElementById('leadForm');
+const leadStatus = document.getElementById('leadStatus');
 
-function formatEuro(value) {
-  return new Intl.NumberFormat('de-DE').format(value) + ' €';
+function formatEuro(n) {
+  return new Intl.NumberFormat('de-DE').format(n) + ' €';
 }
 
-function monthlyRate(amountValue, apr) {
-  const monthly = amountValue * (apr / 100) / 12 + amountValue / 48;
-  return Math.round(monthly);
-}
-
-function scoreOffer(offer, mode) {
-  const base = 100 - offer.rateFrom * 5 + offer.speed * 3 + offer.trust * 4;
-  if (mode === 'rate') return 200 - offer.rateFrom * 14 + offer.speed;
-  if (mode === 'speed') return offer.speed * 15 + offer.trust * 4 - offer.rateFrom * 3;
-  if (mode === 'trust') return offer.trust * 18 + (offer.regional ? 25 : 0) + offer.speed * 2 - offer.rateFrom * 2;
-  return base + (offer.regional ? 10 : 0);
-}
-
-function render() {
+function renderRecommendation() {
   const type = loanType.value;
   const amountValue = Number(amount.value);
-  const mode = priority.value;
+  const selected = offers[type];
   amountLabel.textContent = formatEuro(amountValue);
 
-  let filtered = offers.filter(o => type === 'all' ? true : o.type === type);
-  filtered = filtered
-    .map(o => ({ ...o, score: scoreOffer(o, mode) }))
-    .sort((a, b) => b.score - a.score);
+  const priorityLine = {
+    balanced: 'Ausgewogene Empfehlung aus Vertrauen, Klarheit und digitalem Einstieg.',
+    speed: 'Gewichtung auf schnelle Entscheidung und zügigen Prozess.',
+    trust: 'Gewichtung auf regionale Sicherheit und persönliche Begleitung.',
+    rate: 'Gewichtung stärker auf planbare Monatsrate.'
+  }[priority.value];
 
-  resultSummary.textContent =
-    mode === 'rate' ? 'Sortierung nach möglichst niedriger Rate.' :
-    mode === 'speed' ? 'Sortierung nach schneller Entscheidung.' :
-    mode === 'trust' ? 'Sortierung nach Vertrauen & Regionalität.' :
-    'Sortierung nach ausgewogener Empfehlung.';
-
-  resultsList.innerHTML = filtered.map((offer, index) => {
-    const featured = index === 0 ? ' featured-result' : '';
-    const sparkasse = offer.bank === 'Sparkasse Koblenz' ? ' sparkasse-result' : '';
-    return `
-      <article class="result-card${featured}${sparkasse}">
-        <div class="result-top">
-          <div>
-            <span class="badge ${offer.bank === 'Sparkasse Koblenz' ? '' : 'soft'}">${offer.badge}</span>
-            <h3>${offer.bank}</h3>
-            <p class="result-title">${offer.title}</p>
-          </div>
-          <div class="rate-box">
-            <strong>ab ${offer.rateFrom.toFixed(1).replace('.', ',')} %</strong>
-            <span>eff. Jahreszins</span>
-          </div>
-        </div>
-        <div class="result-meta">
-          <div><span>Monatsrate</span><strong>ca. ${formatEuro(monthlyRate(amountValue, offer.rateFrom))}</strong></div>
-          <div><span>Schnelligkeit</span><strong>${offer.speed}/10</strong></div>
-          <div><span>Vertrauen</span><strong>${offer.trust}/10</strong></div>
-        </div>
-        <ul class="reason-list">
-          ${offer.reasons.map(r => `<li>${r}</li>`).join('')}
-        </ul>
-        <div class="result-actions">
-          <button type="button" class="btn btn-primary">${offer.cta}</button>
-          <button type="button" class="btn btn-secondary">Details</button>
-        </div>
-      </article>
-    `;
-  }).join('');
+  recommendation.innerHTML = `
+    <div class="recommendation-card">
+      <h3>${selected.title}</h3>
+      <p>${selected.reason}</p>
+      <div class="recommendation-meta">
+        <div><span>Zins</span><strong>${selected.rate}</strong></div>
+        <div><span>Geschwindigkeit</span><strong>${selected.speed}</strong></div>
+        <div><span>Monatsrate</span><strong>${selected.payment(amountValue)}</strong></div>
+      </div>
+      <p><strong>Warum oben?</strong> ${priorityLine}</p>
+      <button class="btn btn-primary" onclick="document.getElementById('lead').scrollIntoView({behavior:'smooth'})">Beratung anfragen</button>
+    </div>
+  `;
 }
 
-[loanType, amount, priority].forEach(el => el.addEventListener('input', render));
-render();
+function addMessage(role, text) {
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+  div.textContent = text;
+  chatLog.appendChild(div);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+
+function answerQuestion(q) {
+  const text = q.toLowerCase();
+  if (text.includes('renov') || text.includes('modern')) return 'Für Renovierung oder Sanierung wäre in dieser Demo meist der Modernisierungskredit passend. Die Sparkasse Koblenz kann hier zusätzlich mit regionaler Beratung und Förderhinweisen punkten.';
+  if (text.includes('unterschied') || text.includes('privatkredit') || text.includes('schnellkredit')) return 'Ein Privatkredit ist meist der breitere Standardfall mit planbaren Raten. Ein Schnellkredit ist stärker auf Tempo und einfachen digitalen Einstieg ausgelegt. In der Demo soll die KI genau solche Unterschiede schnell erklären.';
+  if (text.includes('bau') || text.includes('unterlagen')) return 'Bei Baufinanzierung sind meist Einkommensnachweise, Objektunterlagen, Eigenkapitalübersicht und bestehende Finanzierungen relevant. Die echte KI könnte hier eine Unterlagen-Checkliste vorbereiten.';
+  if (text.includes('welcher kredit')) return 'Das hängt vor allem von Verwendungszweck, Höhe und gewünschter Geschwindigkeit ab. Genau dafür ist der Kreditfinder gedacht.';
+  return 'Die Demo-KI würde hier den Bedarf einordnen, passende Kreditarten erklären und den Nutzer in Anfrage, Rückruf oder Beratung weiterführen.';
+}
+
+function sendQuestion(prefill) {
+  const q = prefill || chatInput.value.trim();
+  if (!q) return;
+  addMessage('user', q);
+  chatInput.value = '';
+  setTimeout(() => addMessage('bot', answerQuestion(q)), 250);
+}
+
+loanType.addEventListener('input', renderRecommendation);
+amount.addEventListener('input', renderRecommendation);
+priority.addEventListener('input', renderRecommendation);
+sendBtn.addEventListener('click', () => sendQuestion());
+chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendQuestion(); });
+document.querySelectorAll('.suggestion').forEach(btn => btn.addEventListener('click', () => sendQuestion(btn.dataset.q)));
+leadForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('leadName').value.trim();
+  const email = document.getElementById('leadEmail').value.trim();
+  const interest = document.getElementById('leadInterest').value;
+  if (!name || !email) {
+    leadStatus.textContent = 'Bitte Name und E-Mail ausfüllen.';
+    return;
+  }
+  leadStatus.textContent = `Demo gespeichert: ${name} (${email}) mit Interesse an ${interest}. In einer echten Version würde das jetzt ins Backend/CRM laufen.`;
+  leadForm.reset();
+});
+
+renderRecommendation();

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kreditfinder Koblenz – Demo mit Sparkasse Koblenz Fokus</title>
-  <meta name="description" content="Interaktive Demo für eine Kreditfinder-Webseite mit Sparkasse Koblenz als hervorgehobener regionaler Option und alternativen Vergleichsangeboten." />
+  <title>Sparkasse Koblenz – Kreditfinder & KI-Beratung Demo</title>
+  <meta name="description" content="Demo-Konzept für die Sparkasse Koblenz: SEO-starker Kreditfinder mit KI-Beratung, klarer Nutzerführung und Lead-Fokus für mehr qualifizierte Kreditanfragen." />
+  <meta name="keywords" content="privatkredit koblenz, schnellkredit koblenz, baufinanzierung koblenz, sparkasse koblenz kredit, kredit vergleich koblenz" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,94 +17,159 @@
       <div class="brand">
         <div class="brand-mark">S</div>
         <div>
-          <strong>Kreditfinder Koblenz</strong>
-          <p>Demo: Sparkasse Koblenz als starke regionale Option</p>
+          <strong>Sparkasse Koblenz</strong>
+          <p>Demo: Kreditfinder, SEO & KI-Beratung</p>
         </div>
       </div>
       <nav>
+        <a href="#seo">SEO-Chancen</a>
         <a href="#finder">Kreditfinder</a>
-        <a href="#results">Angebote</a>
-        <a href="#why">Warum Sparkasse?</a>
+        <a href="#beratung">KI-Beratung</a>
+        <a href="#lead">Anfrage</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid single">
+      <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Interaktive Pitch-Demo</span>
-          <h1>Finden Sie den passenden Kredit — mit einer regional starken Empfehlung ganz oben</h1>
-          <p class="lead">Diese Demo zeigt, wie eine Such-/Vergleichsseite aufgebaut sein kann, auf der die Sparkasse Koblenz durch Vertrauen, Klarheit und Nutzerführung sichtbar heraussticht — auch wenn sie nicht immer den billigsten Zinssatz hat.</p>
+          <span class="eyebrow">Demo für skalierbares Kreditwachstum</span>
+          <h1>Mehr Sichtbarkeit. Mehr passende Kredite. Mehr qualifizierte Anfragen.</h1>
+          <p class="lead">Diese Demo zeigt, wie die Sparkasse Koblenz über eine SEO-starke Website, einen klaren Kreditfinder und eine integrierte KI-Beratung mehr Nutzer früh abholen und in echte Beratung oder Anfrage überführen kann.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#finder">Jetzt Kredit finden</a>
-            <a class="btn btn-secondary" href="#results">Beispielangebote ansehen</a>
+            <a class="btn btn-primary" href="#finder">Kreditfinder starten</a>
+            <a class="btn btn-secondary" href="#beratung">KI-Beratung testen</a>
           </div>
+          <ul class="hero-points">
+            <li>Suchmaschinenfokus auf lokale Kredit-Keywords</li>
+            <li>klare Seiten je Kreditart statt Sammelseite</li>
+            <li>digitale Vorqualifizierung + regionale Vertrauenssignale</li>
+          </ul>
         </div>
+        <aside class="hero-card" id="seo">
+          <span class="eyebrow">SEO-Fokus</span>
+          <h2>Keyword-Beispiele</h2>
+          <div class="keyword-list">
+            <span>privatkredit koblenz</span>
+            <span>schnellkredit koblenz</span>
+            <span>baufinanzierung koblenz</span>
+            <span>kredit vergleich koblenz</span>
+            <span>modernisierungskredit koblenz</span>
+            <span>sparkasse koblenz kredit</span>
+          </div>
+          <p>Die Demo ist bewusst so aufgebaut, dass sie Suchintention, Vergleich, Beratung und Conversion miteinander verbindet.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container cards three">
+        <article class="card">
+          <h3>1. SEO-Landingpages</h3>
+          <p>Eigene Seiten für Privatkredit, Schnellkredit, Baufinanzierung und Modernisierung mit FAQ, lokalen Signalen und klarer CTA.</p>
+        </article>
+        <article class="card">
+          <h3>2. Kreditfinder</h3>
+          <p>Nutzer werden geführt statt allein gelassen: Kreditart, Bedarf, Höhe und Priorität werden sauber eingeordnet.</p>
+        </article>
+        <article class="card">
+          <h3>3. KI-Beratung</h3>
+          <p>Ein Chat hilft bei Fragen, erklärt Unterschiede und führt Nutzer schneller zur passenden Anfrage.</p>
+        </article>
       </div>
     </section>
 
     <section class="section" id="finder">
-      <div class="container finder-layout">
-        <aside class="filter-panel">
+      <div class="container two-col">
+        <div class="panel">
           <span class="eyebrow">Kreditfinder</span>
-          <h2>Welchen Kredit brauchen Sie?</h2>
+          <h2>Welcher Kredit passt zu dir?</h2>
           <div class="form-grid">
             <label>Kreditart
               <select id="loanType">
-                <option value="all">Alle</option>
                 <option value="privatkredit">Privatkredit / Ratenkredit</option>
                 <option value="schnellkredit">Schnellkredit</option>
                 <option value="baufinanzierung">Baufinanzierung</option>
                 <option value="modernisierung">Modernisierung</option>
-                <option value="autokredit">Autokredit</option>
               </select>
             </label>
             <label>Betrag
-              <input id="amount" type="range" min="1000" max="500000" step="1000" value="15000" />
-              <div class="range-value"><span id="amountLabel">15.000 €</span></div>
+              <input id="amount" type="range" min="1000" max="250000" step="1000" value="15000" />
+              <div class="range-value" id="amountLabel">15.000 €</div>
             </label>
-            <label>Priorität
+            <label>Wichtigster Faktor
               <select id="priority">
                 <option value="balanced">Ausgewogen</option>
-                <option value="rate">Möglichst niedrige Rate</option>
-                <option value="speed">Schnelle Entscheidung</option>
-                <option value="trust">Vertrauen & Regionalität</option>
+                <option value="speed">Schnelligkeit</option>
+                <option value="trust">Vertrauen</option>
+                <option value="rate">Niedrige Rate</option>
               </select>
             </label>
           </div>
-          <div class="note-box">
-            <strong>Pitch-Idee:</strong>
-            <p>Die Sparkasse Koblenz wird nicht nur über den Zins verkauft, sondern über eine bessere Gesamtentscheidung: regional, nachvollziehbar, sicher und mit guter digitaler Führung.</p>
-          </div>
-        </aside>
-
-        <section class="results-panel" id="results">
-          <div class="results-head">
-            <div>
-              <span class="eyebrow">Ergebnisse</span>
-              <h2>Passende Kreditoptionen</h2>
-            </div>
-            <p id="resultSummary">Sortierung nach ausgewogener Empfehlung.</p>
-          </div>
-          <div id="resultsList" class="result-list"></div>
-        </section>
+        </div>
+        <div class="panel result-panel">
+          <span class="eyebrow">Empfehlung</span>
+          <div id="recommendation"></div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="why">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Warum die Sparkasse oben stehen kann</span>
-          <h2>Die Empfehlung basiert nicht nur auf dem Nominalzins</h2>
-          <p>Wenn Nutzer nur nach dem günstigsten Zins filtern, gewinnt fast immer jemand anderes. Wenn die Plattform aber echte Entscheidungskriterien abbildet, kann die Sparkasse strategisch vorne stehen.</p>
+    <section class="section section-alt" id="beratung">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">KI-Beratung</span>
+          <h2>Fragen stellen, Kredit verstehen, sicherer entscheiden</h2>
+          <p class="lead small">Die KI ist hier als Demo integriert. In einer echten Version könnte sie Sparkassen-Produkte erklären, Unterlagen vorbereiten, Unterschiede zwischen Kreditarten verständlich machen und Leads vorqualifizieren.</p>
+          <div class="chat-suggestions">
+            <button class="suggestion" data-q="Welcher Kredit passt für eine Renovierung?">Renovierung finanzieren</button>
+            <button class="suggestion" data-q="Was ist der Unterschied zwischen Privatkredit und Schnellkredit?">Privatkredit vs. Schnellkredit</button>
+            <button class="suggestion" data-q="Welche Unterlagen brauche ich für eine Baufinanzierung?">Unterlagen Baufinanzierung</button>
+          </div>
         </div>
-        <div class="benefits-grid">
-          <div class="benefit"><h3>Vertrauensvorsprung</h3><p>Bekannte Marke, regionale Nähe, persönliche Ansprechpartner und mehr Sicherheit im Entscheidungsprozess.</p></div>
-          <div class="benefit"><h3>Digitale Klarheit</h3><p>Pre-Check, einfache Formulare und klare nächste Schritte senken Reibung deutlich.</p></div>
-          <div class="benefit"><h3>Erklärte Entscheidung</h3><p>Nutzer sehen nicht nur Zahlen, sondern auch Gründe: Schnelligkeit, Flexibilität, persönliche Betreuung.</p></div>
-          <div class="benefit"><h3>SEO + Conversion</h3><p>Die Seite kann auf viele Suchanfragen ranken und den Nutzer direkt in Anfrage oder Beratung führen.</p></div>
+        <div class="chatbox panel">
+          <div class="chat-log" id="chatLog">
+            <div class="msg bot">Hallo 👋 Ich bin die Demo-KI-Beratung der Sparkasse Koblenz. Ich helfe dir, den passenden Kredit einzuordnen.</div>
+          </div>
+          <div class="chat-input-row">
+            <input id="chatInput" type="text" placeholder="Stelle eine Frage zur Finanzierung…" />
+            <button id="sendBtn" class="btn btn-primary">Senden</button>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="lead">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Lead-Strecke</span>
+          <h2>Aus Interesse wird eine echte Anfrage</h2>
+          <p class="lead small">Ziel der Demo: nicht nur informieren, sondern Nutzer sauber in Rückruf, Anfrage oder Beratung überführen.</p>
+          <ul class="hero-points dark">
+            <li>60-Sekunden-Pre-Check</li>
+            <li>Rückruf oder Terminbuchung</li>
+            <li>regionale Ansprechpartner</li>
+            <li>klare nächste Schritte statt Abbruch</li>
+          </ul>
+        </div>
+        <form class="panel form-grid" id="leadForm">
+          <label>Name
+            <input type="text" id="leadName" placeholder="Max Mustermann" />
+          </label>
+          <label>E-Mail
+            <input type="email" id="leadEmail" placeholder="max@beispiel.de" />
+          </label>
+          <label>Interesse
+            <select id="leadInterest">
+              <option>Privatkredit</option>
+              <option>Schnellkredit</option>
+              <option>Baufinanzierung</option>
+              <option>Modernisierung</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-primary">Demo-Anfrage absenden</button>
+          <small id="leadStatus">Demo-Backend: Anfrage wird lokal simuliert.</small>
+        </form>
       </div>
     </section>
   </main>
@@ -111,12 +177,12 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <strong>Demo-Hinweis</strong>
-        <p>Diese Seite ist ein klickbarer Prototyp für Pitch, UX und Positionierung — keine Live-Bankberatung und kein echter Kreditvergleich.</p>
+        <strong>Demo-Ziel</strong>
+        <p>Ein vorzeigbares Konzept, wie die Sparkasse Koblenz über SEO, UX und KI-Beratung mehr qualifizierte Kreditanfragen gewinnen kann.</p>
       </div>
       <div>
-        <strong>Ziel</strong>
-        <p>Zeigen, wie eine Sparkassen-nahe Kreditplattform Interessenten früher abholt und die Sparkasse strategisch sichtbar nach oben bringt.</p>
+        <strong>Technik-Idee</strong>
+        <p>Frontend + leichtes Backend + KI-Schicht + Landingpages je Kreditart + Tracking für Conversion und Ranking.</p>
       </div>
     </div>
   </footer>
